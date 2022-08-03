@@ -1,82 +1,27 @@
-import React, { useRef, useEffect, Suspense } from 'react'
-import * as THREE from 'three'
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls"
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
-export const Scene = () => {
-    const mountRef = useRef(null)
-
-    useEffect(() => {
-        const currentMount = mountRef.current
-        //Scene
-        const scene = new THREE.Scene()
-        const camera = new THREE.PerspectiveCamera(
-            25,
-            currentMount.clientWidth / currentMount.clientHeight,
-            0.1,
-            1000
-        )
-        camera.position.z = 2
-        camera.position.y =0
-        scene.add (camera)
-        //renderer
-        const renderer = new THREE.WebGLRenderer()
-        renderer.setClearColor(0x5C3070, 0);
-        renderer.setSize(currentMount.clientWidth,
-                    currentMount.clientHeight)
-        currentMount.appendChild(renderer.domElement)
-        //loader
-        const satelite= new THREE.Group();
-        const gltfloader = new GLTFLoader();
-        gltfloader.load('./assets/satelite1.gltf',(gltf) =>{
-            gltf.scene.scale.set(0.1,0.1,0.1)
-            satelite.add(gltf.scene)
-            satelite.position.x=-1
-            satelite.position.z=-10 
-            scene.add(satelite)
-        })
-        //texturas
-        const textureLoader = new THREE.TextureLoader()
-        const map = textureLoader.load('./assets/Albedo.jpg')
-
-        //tierra
-            const geometry1 = new THREE.SphereGeometry(0.3,32,16,
-                )
-            const material2 = new THREE.MeshStandardMaterial({
-                map:map,
-                displacementScale:0.05
-            } )
-            const circulo = new THREE.Mesh(geometry1,material2)
-            circulo.position.x=1.
-            circulo.position.y=-0.3
-            circulo.rotateX(1)
-        scene.add(circulo)
-        //luz
-        const A0 = new THREE.AmbientLight(0xffffffff,1)
-        scene.add(A0)
-        const animate = () =>{
-            circulo.rotateY(0.004)
-            renderer.render(scene,camera)
-            requestAnimationFrame(animate)
-        }
-        animate()
-
-
-        //clean
-        return () => {
-            currentMount.removeChild(renderer.domElement)
-        }
-    },  [])
-
-
-
+import React from 'react';
+import Layout from '../components/Layout.js';
+import {Button, Container, Row,Image} from 'react-bootstrap';
+import Scene from '../components/Scene.js';
+export default function Home() {
     return (
-    <div className='Contenedor3D'
-        ref={mountRef}
-        style={{width:'100%', height:'90vh'}}
-    >
-    </div>
-  )
+      <>
+        <Layout>
+            <section id='inicio' className='mb-5  d-flex justify-content-center align-items-center'>
+              <Container>
+                <Row>
+                  <div className='col-12 col-lg-6 d-flex align-items-center '>
+                    <div>
+                      <div><h1 className='text-center'>lorem</h1></div>
+                      <div><p className='text-center'>In fermentum eget odio at viverra. Nulla elementum, lacus sit amet placerat tempor, sem magna auctor enim, vel porta felis dolor in justo. In imperdiet posuere orci non mattis. Aliquam suscipit elit luctus luctus condimentum. Nulla maximus est sodales tincidunt cursus. Etiam dapibus eu ligula a eleifend. Phasellus tristique quam sit amet sem viverra scelerisque. Nullam vitae justo ac tellus sollicitudin molestie ut venenatis augue. Cras justo ipsum, dignissim id malesuada eu, scelerisque eget felis. Morbi semper vel neque sed ornare. Pellentesque tellus sapien, malesuada vel convallis ut, pulvinar nec sapien.</p></div>
+                    </div>
+                  </div>
+                  <div className='col-12 col-lg-6 d-flex align-items-center hero '>
+                    <Scene></Scene>
+                  </div>
+                </Row>
+              </Container>
+            </section>
+        </Layout>
+      </>
+    );
 }
-
-export default Scene
