@@ -29,28 +29,27 @@ export const Scene = () => {
         const satelite= new THREE.Group();
         const gltfloader = new GLTFLoader();
         gltfloader.load('./assets/satelite1.gltf',(gltf) =>{
-            gltf.scene.scale.set(0.1,0.1,0.1)
+            gltf.scene.scale.set(0.02,0.02,0.02)
             satelite.add(gltf.scene)
-            satelite.position.x=-1
-            satelite.position.z=-10 
+            satelite.position.x=-0.4
+            satelite.position.y=0.3
+            satelite.position.z=0
+            
             scene.add(satelite)
         })
         //texturas
         const textureLoader = new THREE.TextureLoader()
         const map = textureLoader.load('./assets/Albedo.jpg')
-        const heightMap = textureLoader.load('./assets/Bump.jpg')
+        //const heightMap = textureLoader.load('./assets/Bump.jpg')
         //tierra
             const geometry1 = new THREE.SphereGeometry(0.3,32,16,
                 )
             const material2 = new THREE.MeshStandardMaterial({
-                map:map,
-                displacementMap:heightMap,
-                displacementScale:0.05
+                map:map
             } )
             const circulo = new THREE.Mesh(geometry1,material2)
-            circulo.position.x=0.6
-            circulo.position.y=-0.2
-            circulo.rotateX(1)
+            circulo.position.x=0
+            circulo.position.y=-0
         scene.add(circulo)
         //luz
         const A0 = new THREE.AmbientLight(0xffffffff,1)
