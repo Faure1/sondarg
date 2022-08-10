@@ -2,8 +2,9 @@ import React from 'react';
 import Layout from '../components/Layout.js';
 import {Button, Container, Row,Image} from 'react-bootstrap';
 import Scene from '../components/Scene.js';
-import { motion } from "framer-motion"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { motion } from "framer-motion";
+import { FaBell } from "react-icons/fa";
+import { FaQuestion } from "react-icons/fa";
 export default function Home() {
     return (
       <>
@@ -33,19 +34,39 @@ export default function Home() {
                 </Row>
               </Container>
             </section>
-            <section>
+            <section className='mb-5 mt-5'>
               <Container>
                 <Row>
                   <div className='col-12 d-flex justify-content-start'>
                      <motion.button
-                     whileHover={{rotate:360,}}
+                     className='boton'
+                     whileHover={{rotate:360,scale:1.3,}}
                      whileTap={{ rotate:0, }}
                      transition={{duration:1}} //☺
-                      variant="light"><FontAwesomeIcon icon="fa-regular fa-bell" /></motion.button>
+                      variant="light"><FaBell size={44} ></FaBell></motion.button>
+                  </div>
+                </Row>
+                <Row>
+                  <div className='col-3'>
+
+                  </div>
+                  <div className='col-lg-6 d-flex col-12'>
+                    <div className='imagen-mancha-satelite '>
+                      <img src='./assets/satelite.png'></img>
+                    </div>
+                  </div>
+                  <div className='col-lg-3 col-12 d-flex align-items-end'>
+                  <motion.button
+                     className='boton1'
+                     whileHover={{rotate:360,scale:1.3}}
+                     whileTap={{ rotate:0,}}
+                     transition={{duration:1}}>
+                    <FaQuestion size={44}></FaQuestion>
+                    </motion.button>
                   </div>
                 </Row>
               </Container>
-            </section>
+            </section  >
         </Layout>
       </>
     );
