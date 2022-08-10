@@ -16,9 +16,9 @@ const Layout = ({children}) => {
                     <Nav className="me-auto  d-flex  ">
                     </Nav>
                     <Nav>
-                        <Nav.Link href='#inicio' ><h5 className='text-white text-center'>inicio</h5></Nav.Link>
-                        <Nav.Link href='#mas-info'><h5 className='text-white text-center'>Más informacion</h5></Nav.Link>
-                        <Nav.Link href='#mas-info'><h5 className='text-white text-center'>Hola</h5></Nav.Link>
+                        <Nav.Link className='ms-2 mx-2' href='#inicio' ><h6 className='text-white text-center'>Sobre nosotros</h6></Nav.Link>
+                        <Nav.Link className='ms-2 mx-2' href='#mas-info'><h6 className='text-white text-center'>Galeria</h6></Nav.Link>
+                        <Nav.Link className='ms-2 mx-2' href='#mas-info'><h6 className='text-white text-center'>Contactanos</h6></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

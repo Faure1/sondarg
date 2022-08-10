@@ -39,13 +39,13 @@ export const Scene = () => {
         })
         //texturas
         const textureLoader = new THREE.TextureLoader()
-        const map = textureLoader.load('./assets/Albedo.jpg')
+        //const map = textureLoader.load('./assets/Albedo.jpg')
         //const heightMap = textureLoader.load('./assets/Bump.jpg')
         //tierra
             const geometry1 = new THREE.SphereGeometry(0.3,32,16,
                 )
             const material2 = new THREE.MeshStandardMaterial({
-                map:map
+                //map:map
             } )
             const circulo = new THREE.Mesh(geometry1,material2)
             circulo.position.x=0
