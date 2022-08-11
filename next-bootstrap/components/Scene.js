@@ -26,17 +26,16 @@ export const Scene = () => {
                     currentMount.clientHeight)
         currentMount.appendChild(renderer.domElement)
         //loader
-        const satelite= new THREE.Group();
-        const gltfloader = new GLTFLoader();
-        gltfloader.load('./assets/satelite1.gltf',(gltf) =>{
-            gltf.scene.scale.set(0.02,0.02,0.02)
-            satelite.add(gltf.scene)
-            satelite.position.x=-0.4
-            satelite.position.y=0.3
-            satelite.position.z=0
-            
-            scene.add(satelite)
-        })
+       // const satelite= new THREE.Group();
+        //const gltfloader = new GLTFLoader();
+        //gltfloader.load('./assets/satelite1.gltf',(gltf) =>{
+            //gltf.scene.scale.set(0.02,0.02,0.02)
+            //satelite.add(gltf.scene)
+            //satelite.position.x=-0.4
+            //satelite.position.y=0.3
+            //satelite.position.z=0
+            //scene.add(satelite)
+        //})
         //texturas
         const textureLoader = new THREE.TextureLoader()
         //const map = textureLoader.load('./assets/Albedo.jpg')
