@@ -1,6 +1,11 @@
-#__next{
-  background-color:#111131;
+body{
+  background:#111131 !important;
 }
+.div-preloader{
+  margin-top: 25rem;
+}
+
+
 .hero {
 	height: 668px;
   width: 100%;
@@ -25,7 +30,14 @@
   background: url('../public/assets/aura1.png') center center/contain no-repeat;
 
 }
-
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: #111131;
+}
 
 
 
