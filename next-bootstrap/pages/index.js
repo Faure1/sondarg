@@ -5,6 +5,7 @@ import Scene from '../components/Scene.js';
 import { motion } from "framer-motion";
 import { FaBell } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa";
+
 export default function Home() {
     return (
       <>
@@ -25,7 +26,7 @@ export default function Home() {
                       whileInView={{opacity:1,x:0}}
                       transition={{duration:1}}
                       viewport={{once:false}}
-                       className='text-center'>In fermentum eget odio at viverra. Nulla elementum, lacus sit amet placerat tempor, sem magna auctor enim, vel porta felis dolor in justo. In imperdiet posuere orci non mattis. Aliquam suscipit elit luctus luctus condimentum. Nulla maximus est sodales tincidunt cursus. Etiam dapibus eu ligula a eleifend. Phasellus tristique quam sit amet sem viverra scelerisque. Nullam vitae justo ac tellus sollicitudin molestie ut venenatis augue. Cras justo ipsum, dignissim id malesuada eu, scelerisque eget felis. Morbi semper vel neque sed ornare. Pellentesque tellus sapien, malesuada vel convallis ut, pulvinar nec sapien.</motion.p></div>
+                       className='text-center text-white'>In fermentum eget odio at viverra. Nulla elementum, lacus sit amet placerat tempor, sem magna auctor enim, vel porta felis dolor in justo. In imperdiet posuere orci non mattis. Aliquam suscipit elit luctus luctus condimentum. Nulla maximus est sodales tincidunt cursus. Etiam dapibus eu ligula a eleifend. Phasellus tristique quam sit amet sem viverra scelerisque. Nullam vitae justo ac tellus sollicitudin molestie ut venenatis augue. Cras justo ipsum, dignissim id malesuada eu, scelerisque eget felis. Morbi semper vel neque sed ornare. Pellentesque tellus sapien, malesuada vel convallis ut, pulvinar nec sapien.</motion.p></div>
                     </div>
                   </div>
                   <div className='col-12 col-lg-6 d-flex align-items-center hero '>
@@ -52,7 +53,6 @@ export default function Home() {
                   </div>
                   <div className='col-lg-6 d-flex col-12'>
                     <div className='imagen-mancha-satelite '>
-                      <img src='./assets/satelite.png'></img>
                     </div>
                   </div>
                   <div className='col-lg-3 col-12 d-flex align-items-end'>
