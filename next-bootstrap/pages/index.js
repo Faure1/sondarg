@@ -7,6 +7,7 @@ import { FaBell } from "react-icons/fa";
 import { FaQuestion } from "react-icons/fa";
 import { useState,useEffect } from 'react';
 import PacmanLoader from "react-spinners/PacmanLoader";
+import Card from "../components/card.js"
 
 export default function Home() {
   const[loading,setLoading ]=useState(false)
